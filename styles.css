@@ -1,89 +1,96 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel='stylesheet' href='styles.css'>
-  </head>
-  <body>
-    <div class='container'>
+html {
+  box-sizing: border-box;
+}
 
-      <header class='header'>
-        <h1 id='title'>freeCodeCamp Survey Form</h1>
-        <p id='description'>Thank you for taking the time to help us improve the platform</p>
-      </header>
+body {
+  background-attachment: fixed;
+  background-color: rgba(58, 58, 158, 0.8);
+  background-image: linear-gradient(
+      115deg,
+      rgba(58, 58, 158, 0.8),
+      rgba(136, 136, 206, 0.7)
+    ),
+    url(https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg);
+  background-position: center center;
+  background-size: cover;
+  font-family: sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
 
-      <form class='form' id='survey-form' action="">
-        <fieldset class='personal-info'>
+.container {
+  width: 70%;
+  max-width: 680px;
+  margin: 0 auto;
+}
 
-          <label for='name' id='name-label'>Name
-            <input id='name' type='text' name='name' placeholder='Enter your name' required>
-          </label>
+.form {
+  background-color: rgb(0,0,20, 0.6);
+  border-radius: 4px;
+  padding: 2rem;
+  margin: 0;
+}
 
-          <label for='email' id='email-label'>Email
-            <input type='email' id='email' name='email' placeholder='Enter your email' required>
-          </label>
+fieldset {
+  border: none;
+}
 
-          <label for='age' id='number-label'>Age <span class='relative-small-text'>(Optional)</span>
-          <input type='number' id='number' name='age' placeholder='Age' max='120' min='13'>
-          </label>
+header {
+  margin: 3rem auto 2rem;
+  text-align: center;
+  line-height: 1;
+}
 
-          <label for='profession'>Which option best describes your current role?
-            <select name='profession' id='dropdown' required>
-              <option value='' disabled selected>Select your current role</option>
-              <option value='Student'>Student</option>
-              <option value='Full Time Job'>Full Time Job</option>
-              <option value='Full Time Learner'>Full Time Learner</option>
-              <option value='Prefer not to say'>Prefer not to say</option>
-              <option value='Other'>Other</option>
-            </select>
-          </label>
+label, .label {
+  display: block;
+  font-size: 1.2rem;
+}
 
-        </fieldset>
+input, textarea {
+  border-radius: 3px;
+  border: none;
+  display: block;
+  font-size: 1rem;
+  height: 2rem;
+  margin: 0.5rem 0 1.5rem;
+  width: 100%;
+  padding-left: 0.5rem;
+}
 
-        <fieldset class=''>
+select {
+  border-radius: 3px;
+  border: none;
+  display: block;
+  font-size: 1rem;
+  height: 2rem;
+  margin: 0.5rem 0 1rem;
+  width: 100%;
+}
 
-          <p class='label'>Would you recommend freeCodeCamp to a friend?</p>
-          <label><input type='radio' name='recommend' value='Definitely' selected required> Definitely</label>
+input[type='radio'], input[type='checkbox']{
+  display: inline;
+  width: unset;
+  margin: 0;
+  vertical-align: middle;
+}
 
-          <label><input type='radio' name='recommend' value='Maybe' selected required> Maybe</label>
+.improvements {
+  margin-bottom: 1.5rem;
+}
 
-          <label><input type='radio' name='recommend' value='Not sure' selected required> Not sure</label>
+textarea {
+  height: 8rem;
+}
 
-          <p class='label'>Which is your favorite feature of freeCodeCamp?</p>
-          <select name='favorite' required>
-            <option value="Select an option" selected disabled>Select an option</option>
-            <option value="Challenges">Challenges</option>
-            <option value="Projects">Projects</option>
-            <option value="Community">Community</option>
-            <option value="Open Source">Open Source</option>
-          </select>
+.submit {
+  background-color: #37af65;
+  color: white;
+}
 
-        </fieldset>
-
-        <fieldset class='suggestions'>
-
-          <div class='improvements'>
-            <p class='label'>What would you like to see improved? <span class='relative-small-text'>(Check all that apply)</span></p>
-            <label><input type='checkbox' name='Front-end Projects' value='Front-end Projects'> Front-end Projects</label>
-            <label><input type='checkbox' name='Back-end Projects' value='Back-end Projects'> Back-end Projects</label>
-            <label><input type='checkbox' name='Data Visualization' value='Data Visualization'> Data Visualization</label>
-            <label><input type='checkbox' name='Challenges' value='Challenges'> Challenges</label>
-            <label><input type='checkbox' name='Open Source Community' value='Open Source Community'> Open Source Community</label>
-            <label><input type='checkbox' name='Gitter Help Rooms' value='Gitter Help Rooms'> Gitter Help Rooms</label>
-            <label><input type='checkbox' name='Videos' value='Videos'> Videos</label>
-            <label><input type='checkbox' name='City Meetups' value='City Meetups'> City Meetups</label>
-            <label><input type='checkbox' name='Wiki' value='Wiki'> Wiki</label>
-            <label><input type='checkbox' name='Forum' value='Forum'> Forum</label>
-            <label><input type='checkbox' name='Additional Courses' value='Additional Courses'> Additional Courses</label>
-          </div>
-
-          <label>Any comments or suggestions?
-            <textarea name='comment' placeholder='Enter your comment here...' rows=4 ></textarea>
-          </label>
-
-          <input type='submit' id='submit' class='submit'>
-        </fieldset>
-      </form>
-
-    </div>
-  </body>
-</html>
+@media (max-width:800px) {
+  .container {
+    width: unset;
+    max-width: 540px;
+  }
+}
